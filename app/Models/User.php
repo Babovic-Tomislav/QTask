@@ -11,6 +11,7 @@ class User implements Authenticatable
 
     private string $email;
     private string $name;
+    private string $lastName;
     private string $rememberToken = '';
     private string $refreshTokenKey = '';
     private string $tokenKey = '';

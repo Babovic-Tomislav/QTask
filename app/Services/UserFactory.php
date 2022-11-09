@@ -28,6 +28,10 @@ class UserFactory
             if (array_key_exists('first_name', $data['user'])) {
                 $user->setName($data['user']['first_name']);
             }
+
+            if (array_key_exists('last_name', $data['user'])) {
+                $user->setLastName($data['user']['last_name']);
+            }
         }
 
         return $user;

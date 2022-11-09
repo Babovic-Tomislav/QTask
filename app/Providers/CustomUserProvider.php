@@ -22,18 +22,9 @@ class CustomUserProvider implements UserProvider
 
     public function retrieveByToken($identifier, $token)
     {
+        $data = $this->client->refreshToken($token);
 
-        $a = [
-            'id' => 1,
-            'refresh_token_key' => 'refresh_token_key',
-            'user' => [
-                'id' => 1,
-                'email' => 'ahsoka.tano@q.agency',
-                'name' => 'bla'
-            ]
-        ];
-
-        return $this->userFactory->createUser($a);
+        return $this->userFactory->createUser($data);
     }
 
     public function updateRememberToken(Authenticatable $user, $token)
